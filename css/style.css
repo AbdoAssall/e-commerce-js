@@ -269,7 +269,7 @@ a.nav-link:hover {
 }
 /* Home */
 .home {
-    background-image: url('../Images/bg-home.webp');
+    background-image: url('../images/bg-home.webp');
     background-repeat: no-repeat;
     background-size: auto;
     /* background-position: top; */
@@ -522,7 +522,7 @@ footer .copy-right {
   }
   /* SHOP */
 .shop, .wishlist {
-    background-image: url('../Images/bg-shop.webp');
+    background-image: url('../images/bg-shop.webp');
     background-size: cover;
     background-repeat: no-repeat;
     height: 280px;
@@ -531,7 +531,7 @@ footer .copy-right {
     position: relative;
 }
 .wishlist {
-    background-image: url('../Images/wishlist.jpg');
+    background-image: url('../images/wishlist.jpg');
     background-position: center center;
 }
 .shop .overlay, .wishlist .overlay { 
