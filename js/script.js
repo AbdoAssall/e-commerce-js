@@ -154,10 +154,10 @@ let y = selectProducts.map((item) => {
         <div class="col">
                       <div class="product-item card">
                           <div class="img-product">
-                            <img src="images/${item.imgPath}" alt="product" class="card-img-top">
+                            <img src="./images/${item.imgPath}" alt="product" class="card-img-top">
                             <span class="offer">10% OFF</span>
                             <div class="overlay-product">
-                              <img src="images/${item.imgPath}" alt="product"  class="card-img-top">
+                              <img src="./images/${item.imgPath}" alt="product"  class="card-img-top">
                               <ul class="list-over">
                                 <li>
                                   <a id="wishlist-btn-${item.id}" class="wishlist-btn" data-product-id="${item.id}" onClick=addToWishlist(${item.id})>
@@ -215,10 +215,10 @@ let z = selectProducts1.map((item) => {
         <div class="col-lg-4 col-sm-6 col-12">
                       <div class="product-item">
                           <div class="img-product">
-                            <img src="images/${item.imgPath}" alt="product" class="w-100" style="height: 330.77px;">
+                            <img src="./images/${item.imgPath}" alt="product" class="w-100" style="height: 330.77px;">
                             <span class="offer">10% OFF</span>
                             <div class="overlay-product">
-                              <img src="images/${item.imgPath}" alt="product"  class="w-100" style="height: 330.77px;">
+                              <img src="./images/${item.imgPath}" alt="product"  class="w-100" style="height: 330.77px;">
                               <ul class="list-over">
                                 <li>
                                   <a id="wishlist-btn-${item.id}" class="wishlist-btn" data-product-id="${item.id}" onClick=addToWishlist(${item.id})>
@@ -498,144 +498,3 @@ function updateCartUI() {
 //     })
 // })
 ////////////////////////////////////////////////////////////////
-// Search
-// let searchMode = 'title'
-// function getSearchMood(id){
-//     let search = document.getElementById("search")
-//     if (id == 'searchTitle'){
-//         searchMode = 'title';
-//     } else {
-//         searchMode = 'category';
-//     }
-//     search.placeholder = 'Search by ' + searchMode
-//     search.focus()
-//     search.value = '';
-//     drawItems()
-// }
-// function searchData(value){
-//     let allProducts = '';
-//     for(let i=0; i < products.length; i++){
-//      if (searchMode == 'title'){
-//           if(products[i].name.toLowerCase().includes(value.toLowerCase()) 
-//                || products[i].name.toUpperCase().includes(value.toUpperCase())){
-//                 allProducts += `
-//               <div class="col-lg-4 col-sm-6 col-12">
-//                             <div class="product-item">
-//                                 <div class="img-product">
-//                                   <img src="images/${products[i].imgPath}" alt="product" class="w-100" style="height: 330.77px;">
-//                                   <span class="offer">10% OFF</span>
-//                                   <div class="overlay-product">
-//                                     <img src="images/${products[i].imgPath}" alt="product"  class="w-100" style="height: 330.77px;">
-//                                     <ul class="list-over">
-//                                       <li>
-//                                         <a id="wishlist-btn-${products[i].id}" class="wishlist-btn" data-product-id="${products[i].id}" onClick=addToWishlist(${products[i].id})>
-//                                           <i class="fa-regular fa-heart heart-empty d-none"></i>
-//                                            <i class="fa-solid fa-heart heart-solid"></i>
-//                                         </a>
-//                                         <span class="caption-item">Add to Wishlist</span>
-//                                       </li>
-//                                       <li>
-//                                         <a href="#">
-//                                           <i class="fa-solid fa-rotate"></i>
-//                                         </a>
-//                                         <span class="caption-item">Add to Compare</span>
-//                                       </li>
-//                                       <li>
-//                                         <a href="#">
-//                                           <i class="fa-regular fa-eye"></i>
-//                                         </a>
-//                                         <span class="caption-item">Quick view</span>
-//                                       </li>
-//                                       <li>
-//                                         <a data-product-id id="addcart-btn" onClick=addToCart(${products[i].id})>
-//                                            <i class="fa-solid fa-cart-plus"></i>
-//                                         </a>
-//                                         <span class="caption-item">Add to Cart</span>
-//                                       </li>
-//                                     </ul>
-//                                     <span class="sale">On Sale!</span>
-//                                   </div>
-//                                 </div>
-//                                 <div class="info-product">
-//                                   <div class="rate">
-//                                     <i class="fa-solid fa-star"></i>
-//                                     <i class="fa-solid fa-star"></i>
-//                                     <i class="fa-solid fa-star"></i>
-//                                     <i class="fa-solid fa-star"></i>
-//                                     <i class="fa-solid fa-star"></i>
-//                                   </div>
-//                                   <h5 class="title-product">
-//                                     <a href="#">${products[i].name}</a>
-//                                   </h5>
-//                                   <div class="price-priduct">
-//                                     <del>$110.00</del> $${products[i].price}
-//                                   </div>
-//                                 </div>
-//                               </div>
-//                         </div>
-//           `;
-//             }
-//      } else {
-//       if(products[i].category.toLowerCase().includes(value.toLowerCase()) 
-//          || products[i].category.toUpperCase().includes(value.toUpperCase())){
-//           allProducts += `
-//         <div class="col-lg-4 col-sm-6 col-12">
-//                       <div class="product-item">
-//                           <div class="img-product">
-//                             <img src="images/${products[i].imgPath}" alt="product" class="w-100" style="height: 330.77px;">
-//                             <span class="offer">10% OFF</span>
-//                             <div class="overlay-product">
-//                               <img src="images/${products[i].imgPath}" alt="product"  class="w-100" style="height: 330.77px;">
-//                               <ul class="list-over">
-//                                 <li>
-//                                   <a id="wishlist-btn-${products[i].id}" class="wishlist-btn" data-product-id="${products[i].id}" onClick=addToWishlist(${products[i].id})>
-//                                     <i class="fa-regular fa-heart heart-empty d-none"></i>
-//                                      <i class="fa-solid fa-heart heart-solid"></i>
-//                                   </a>
-//                                   <span class="caption-item">Add to Wishlist</span>
-//                                 </li>
-//                                 <li>
-//                                   <a href="#">
-//                                     <i class="fa-solid fa-rotate"></i>
-//                                   </a>
-//                                   <span class="caption-item">Add to Compare</span>
-//                                 </li>
-//                                 <li>
-//                                   <a href="#">
-//                                     <i class="fa-regular fa-eye"></i>
-//                                   </a>
-//                                   <span class="caption-item">Quick view</span>
-//                                 </li>
-//                                 <li>
-//                                   <a data-product-id id="addcart-btn" onClick=addToCart(${products[i].id})>
-//                                      <i class="fa-solid fa-cart-plus"></i>
-//                                   </a>
-//                                   <span class="caption-item">Add to Cart</span>
-//                                 </li>
-//                               </ul>
-//                               <span class="sale">On Sale!</span>
-//                             </div>
-//                           </div>
-//                           <div class="info-product">
-//                             <div class="rate">
-//                               <i class="fa-solid fa-star"></i>
-//                               <i class="fa-solid fa-star"></i>
-//                               <i class="fa-solid fa-star"></i>
-//                               <i class="fa-solid fa-star"></i>
-//                               <i class="fa-solid fa-star"></i>
-//                             </div>
-//                             <h5 class="title-product">
-//                               <a href="#">${products[i].name}</a>
-//                             </h5>
-//                             <div class="price-priduct">
-//                               <del>$110.00</del> $${products[i].price}
-//                             </div>
-//                           </div>
-//                         </div>
-//                   </div>
-//   `;
-//       }
-// }
-//     }
-//     document.querySelector("#products") .innerHTML = allProducts
-// }

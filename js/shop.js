@@ -150,10 +150,10 @@ function drawItems() {
               <div class="col-lg-4 col-sm-6 col-12">
                             <div class="product-item">
                                 <div class="img-product">
-                                  <img src="images/${item.imgPath}" alt="product" class="w-100" style="height: 330.77px;">
+                                  <img src="./images/${item.imgPath}" alt="product" class="w-100" style="height: 330.77px;">
                                   <span class="offer">10% OFF</span>
                                   <div class="overlay-product">
-                                    <img src="images/${item.imgPath}" alt="product"  class="w-100" style="height: 330.77px;">
+                                    <img src="./images/${item.imgPath}" alt="product"  class="w-100" style="height: 330.77px;">
                                     <ul class="list-over">
                                       <li>
                                         <a id="wishlist-btn-${item.id}" class="wishlist-btn" data-product-id="${item.id}" onClick=addToWishlist(${item.id})>
@@ -455,10 +455,10 @@ function searchData(value){
               <div class="col-lg-4 col-sm-6 col-12">
                             <div class="product-item">
                                 <div class="img-product">
-                                  <img src="images/${products[i].imgPath}" alt="product" class="w-100" style="height: 330.77px;">
+                                  <img src="./images/${products[i].imgPath}" alt="product" class="w-100" style="height: 330.77px;">
                                   <span class="offer">10% OFF</span>
                                   <div class="overlay-product">
-                                    <img src="images/${products[i].imgPath}" alt="product"  class="w-100" style="height: 330.77px;">
+                                    <img src="./images/${products[i].imgPath}" alt="product"  class="w-100" style="height: 330.77px;">
                                     <ul class="list-over">
                                       <li>
                                         <a id="wishlist-btn-${products[i].id}" class="wishlist-btn" data-product-id="${products[i].id}" onClick=addToWishlist(${products[i].id})>
@@ -515,10 +515,10 @@ function searchData(value){
         <div class="col-lg-4 col-sm-6 col-12">
                       <div class="product-item">
                           <div class="img-product">
-                            <img src="images/${products[i].imgPath}" alt="product" class="w-100" style="height: 330.77px;">
+                            <img src="./images/${products[i].imgPath}" alt="product" class="w-100" style="height: 330.77px;">
                             <span class="offer">10% OFF</span>
                             <div class="overlay-product">
-                              <img src="images/${products[i].imgPath}" alt="product"  class="w-100" style="height: 330.77px;">
+                              <img src="./images/${products[i].imgPath}" alt="product"  class="w-100" style="height: 330.77px;">
                               <ul class="list-over">
                                 <li>
                                   <a id="wishlist-btn-${products[i].id}" class="wishlist-btn" data-product-id="${products[i].id}" onClick=addToWishlist(${products[i].id})>

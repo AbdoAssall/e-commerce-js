@@ -204,7 +204,7 @@ function drawWishlisttProducts(products){
         <div class="product-item h-auto card">
           <div class="img-product">
             <img
-              src="images/${item.imgPath}"
+              src="./images/${item.imgPath}"
               alt="product"
               class="w-100"
               style="height: 150px"
@@ -217,7 +217,7 @@ function drawWishlisttProducts(products){
             </div>
             <div class="overlay-product">
               <img
-              src="images/${item.imgPath}"
+              src="./images/${item.imgPath}"
               alt="product"
               class="w-100"
               style="height: 150px"
