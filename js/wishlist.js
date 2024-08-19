@@ -32,17 +32,7 @@ if (localStorage.getItem("email")) {
         }, 1000);
     })
 }
-if (localStorage.getItem("email")) {
-    cartHeader.addEventListener("click", () => {
-        window.location = "cart.html"
-    })
-} else {
-    cartHeader.addEventListener("click", () => {
-        setTimeout(() => {
-            window.location = "login.html"
-        }, 1000);
-    })
-}
+
 // Go to Favorite
 let favBtn = document.querySelector("#fav-btn")
 
@@ -207,7 +197,7 @@ if (dataWislist.length === 0 || wishlistProdcuts == '' || wishlist.length === 0)
   </div>
  `;
 } else {
-  drawWishlisttProducts();
+  drawWishlisttProducts(dataWislist);
 }
 function drawWishlisttProducts(products){
   let wishlistProdcut = products.map((item) => {
