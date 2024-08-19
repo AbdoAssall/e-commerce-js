@@ -44,7 +44,7 @@ function deleteAll(){
                 <td>
                   <div class="h-auto mx-auto" scope="row" style="width: 80px;">
                     <img
-                      src="./Images/${item.imgPath}"
+                      src="./images/${item.imgPath}"
                       class="img-fluid img-card"
                       alt="Product image"
                       style="object-fit: cover;"
@@ -104,7 +104,7 @@ function deleteAll(){
                 <td>
                   <div class="h-auto mx-auto" scope="row" style="width: 80px;">
                     <img
-                      src="./Images/${item.imgPath}"
+                      src="./images/${item.imgPath}"
                       class="img-fluid img-card"
                       alt="Product image"
                       style="object-fit: cover;"

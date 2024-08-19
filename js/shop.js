@@ -219,7 +219,7 @@ if (addIeam) {
                 <div class="row g-0">
                   <div class="col-md-4">
                     <img
-                      src="./Images/${item.imgPath}"
+                      src="./images/${item.imgPath}"
                       class="img-fluid img-card"
                       alt="Product image"
                     />
@@ -391,7 +391,7 @@ function updateCartUI() {
         <div class="row g-0">
           <div class="col-md-4">
             <img
-              src="./Images/${item.imgPath}"
+              src="./images/${item.imgPath}"
               class="img-fluid img-card"
               alt="Product image"
             />
