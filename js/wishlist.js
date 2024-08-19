@@ -19,6 +19,7 @@ click(cart)
 ////////////////////////////////////////////////////////////
 // Go to cart
 let cartBtn = document.querySelector("#cart-btn")
+let cartHeader = document.querySelector("#cart-header")
 
 if (localStorage.getItem("email")) {
     cartBtn.addEventListener("click", () => {
@@ -26,6 +27,17 @@ if (localStorage.getItem("email")) {
     })
 } else {
     cartBtn.addEventListener("click", () => {
+        setTimeout(() => {
+            window.location = "login.html"
+        }, 1000);
+    })
+}
+if (localStorage.getItem("email")) {
+    cartHeader.addEventListener("click", () => {
+        window.location = "cart.html"
+    })
+} else {
+    cartHeader.addEventListener("click", () => {
         setTimeout(() => {
             window.location = "login.html"
         }, 1000);

@@ -190,3 +190,14 @@ let favBtn = document.querySelector("#fav-btn")
 favBtn.addEventListener("click", () => {
   window.location = "wishlist.html";
 })
+// Go to Cart
+let cartFooter = document.querySelector("#cart-footer")
+if (localStorage.getItem("email")) {
+  cartFooter.addEventListener("click", () => {
+      window.location = "cart.html"
+  })
+} else {
+  cartFooter.addEventListener("click", () => {
+          window.location = "login.html"
+  })
+}
