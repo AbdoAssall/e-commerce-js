@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="Images/shopify-brands-solid.svg">
+    <!-- Icons -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/boxicons.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+    <!-- Google Fonts -->
+    <!-- CSS files -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <!--Title -->
+    <title>Cart - Shopify</title>
+</head>
+  <body>
+     <!-- Header -->
+     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="Images/shopify-brands-solid.svg"
+            alt="Logo"
+            width="50"
+            height="38"
+            class="d-inline-block align-text-top"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav flex-grow-1 justify-content-center mb-2 mb-lg-0 ">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="shop.html">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="cart.html">Cart</a>
+            </li>
+          </ul>
+
+          <div
+            class="m-0 mt-lg-0 mt-sm-4 text-center d-flex justify-content-center gap-1 nav-icon"
+          >
+            <div class="dropdown d-inline-block ms- user">
+              <a
+                class="btn icon-color"
+                href=""
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                ><i class="bx bx-user fs-3 text-secondary"></i
+              ></a>
+              <ul class="dropdown-menu user-info">
+                <li>
+                  <a
+                    id="username"
+                    class="dropdown-item btn-primary ms-3 text-capitalize"
+                    href=""
+                  ></a>
+                </li>
+                <li>
+                  <a id="logout" class="dropdown-item btn-primary ms-3" href=""
+                    >Logout</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <a
+              id="fav-btn"
+              class="btn fs-5 position-relative icon-color cart"
+              role="button"
+              aria-expanded="false"
+            >
+              <i class="fa-regular fa-heart text-secondary"></i>
+              <span
+                class="bg-black text-white position-absolute"
+                id="wishlist-count"
+                >0</span
+              >
+            </a>
+            <a
+              class="btn position-relative cart"
+              id="cart"
+              role="button"
+              data-bs-toggle="dropdow"
+              aria-expanded="false"
+            >
+              <i class="bx bx-cart fs-3 text-secondary"></i>
+              <span
+                class="bg-black text-white position-absolute num-count-cart"
+              >0</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+     <!-- Add to cart -->
+     <div class="container-fluid my-5">
+      <div
+        class="ro justify-content-en position-fixed"
+        style="top: 0px; right: 0; z-index: 9"
+      >
+        <div
+          class="card me-4 z-3"
+          style="width: 340px; display: none; top: 67px; right: 0"
+          id="cart-summary"
+        >
+        <div class="py-2 px-3 border-bottom d-flex justify-content-between align-items-center"
+        style="line-height: 45px">
+             <p class="fw-medium text-uppercase mb-0">Shopping cart</p>
+             <button type="button" class="btn-close" aria-label="Close" style="box-shadow: none;"></button>
+         </div>
+          <div class="d-flex flex-column" style="height: 80vh;">
+            <div class="card-body position-relative overflow-auto">
+              <div id="addcart" class="m-0 position-absolute" style="max-width: 100%;">
+              </div>
+            </div>
+            <div class="d-grid gap-2 col-12 mx-auto px-3 py-3 border-top border-secondary-subtle">
+              <a class="btn btn-primary" id="cart-btn" href="cart.html">Go to cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- Cart Product -->
+    <div class="container my-5 pt-3 w-100">
+      <div class="card mx-auto " style="width: 900px">
+        <p class="fs-5 text-center border-bottom" style="line-height: 45px">
+          CART SUMMARY
+        </p>
+        <div class="card-body table-responsive">
+          <table class="table table-bordered text-center align-middle">
+            <thead>
+              <tr>
+                <th scope="col" class="cart-count"></th>
+                <th scope="col">Item Name</th>
+                <th scope="col">Item price</th>
+                <th scope="col">Item Quantity</th>
+                <th scope="col">Total price</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- <tr class="text-center">
+                <td>
+                  <div class="h-auto mx-auto" scope="row" style="width: 80px;">
+                    <img
+                      src="./Images/Chunky leather shoes.webp"
+                      class="img-fluid img-card"
+                      alt="Product image"
+                      style="object-fit: cover;"
+                    />
+                  </div>
+                </td>
+                <td>Product</td>
+                <td>500$</td>
+
+                <td style="width: 180px">
+                  <div class="card-text quantity">
+                    <button>-</button>
+                    <span class="px-2">1</span>
+                    <button>+</button>
+                  </div>
+                </td>
+                <td></td>
+                <td>
+                  <a href="">
+                    <button class="btn btn-block rounded-1 btn-remove">Remove</button>
+                  </a>
+                </td>
+              </tr> -->
+            </tbody>
+          </table>
+          <div id="emptyCart"></div>
+          <div class="card-footer mt-2" id="total-price">Subtotal: $0.00</div>
+          <div class="d-grid gap-2 col-12 mx-auto">
+            <a
+              class="btn btn-primary"
+              id="btn-show"
+              onclick="deleteAll()"
+              >CheckOut</a>
+          </div>
+        </div>
+        <!-- <hr class="border-secondary d-inline-block mx-auto " width="94%"> -->
+      </div>
+    </div>
+    <footer class="py-5 w-100" style="background-color: #000">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+          <div class="col">
+            <div class="footer-single">
+              <h4 class="mb-4 fw-semibold text-light"><a href="index.html" class="text-light">Shopify</a></h4>
+              <p style="color: #888">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
+                ea. Consectetur error recusandae ipsum quos porro ratione
+                reprehenderit maiores voluptatem, officiis ullam laborum
+                aspernatur sint dolorum quibusdam numquam nostrum provident!
+              </p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="footer-single">
+              <h4 class="mb-4 fw-semibold fs-6 text-capitalize text-light">
+                Top Categories
+              </h4>
+              <ul>
+                <li><a href="#" class="link-secondary">Smart Watches</a></li>
+                <li><a href="#" class="link-secondary">Speaker</a></li>
+                <li><a href="#" class="link-secondary">T-Shirt</a></li>
+                <li><a href="#" class="link-secondary">Cap</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col">
+            <div class="footer-single">
+              <h4 class="mb-4 fw-semibold fs-6 text-capitalize text-light">
+                Useful Links
+              </h4>
+              <ul>
+                <li><a href="shop.html" class="link-secondary">Shop</a></li>
+                <li><a href="cart.html" class="link-secondary">Cart</a></li>
+                <li><a href="login.html" class="link-secondary">Login</a></li>
+                <li>
+                  <a href="wishlist.html" class="link-secondary">Wishlist</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col">
+            <div class="footer-single">
+              <h4 class="mb-4 fw-semibold fs-6 text-capitalize text-light">
+                Contact
+              </h4>
+              <ul style="color: #888">
+                <li class="mb-4">Egypt, Cairo</li>
+                <li class="mb-4">+20106309759</li>
+                <li class="mb-4">abdoassal85@gmail.com</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p class="mt-4 text-center mb-0 copy-right">
+          &copy;2024 Developed by Shopify. All rights reserved.
+        </p>
+      </div>
+    </footer>
+    <!-- JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
+</html>
