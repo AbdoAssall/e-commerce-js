@@ -29,6 +29,11 @@ a {
     color: var(--text-color-hover) !important;
     font-weight: 500 !important;
 }
+@media (max-width: 992px){
+    .card-width {
+        width: 100% !important;
+    }
+}
 /* Start Glopal Rules */
 .card-body button {
     background-color: transparent;

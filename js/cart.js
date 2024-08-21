@@ -22,7 +22,7 @@ if (getProducts) {
     })
 } 
 // if cart is empty
-if (dataPro.length === 0){
+if (cartProdcuts == '' || dataPro.length === 0){
   emptyCart.innerHTML = `
   <div class="empty-cart text-center my-4 mb-5">
       <i class="bi bi-cart-x text-secondary" style="font-size: 60px;"></i>

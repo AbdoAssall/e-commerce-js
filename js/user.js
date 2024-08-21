@@ -11,9 +11,9 @@ if (localStorage.getItem("email")){
         userInfo.remove()
         window.location = "login.html"
     })
-    favBtn.addEventListener("click", () =>{
-        window.location = "login.html"
-    })
+    // favBtn.addEventListener("click", () =>{
+    //     window.location = "login.html"
+    // })
 }
 
 let logout = document.querySelector("#logout")

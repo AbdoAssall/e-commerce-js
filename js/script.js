@@ -4,18 +4,23 @@ let btnClose = document.querySelector(".btn-close")
 var cart = document.getElementById("cart");
 
 function click(btn) {
-    btn.addEventListener("click", () => {
-        if (cartSummary.style.display === "block") {
-            cartSummary.style.display = "none";
-        }
-        else {
-            cartSummary.style.display = "block";
-        }
+  if (screen.width <= 991) {
+    btn.addEventListener("click", () =>{
+      window.location = "cart.html"
     })
+  } else {
+    btn.addEventListener("click", () => {
+      if (cartSummary.style.display === "block") {
+          cartSummary.style.display = "none";
+      }
+      else {
+          cartSummary.style.display = "block";
+      }
+  })
+  }
 }
 click(btnClose);
 click(cart)
-
 ////////////////////////////////////////////////////////////
 // Go to cart
 let cartBtn = document.querySelector("#cart-btn")

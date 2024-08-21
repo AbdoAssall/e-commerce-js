@@ -3,15 +3,21 @@ var cartSummary = document.getElementById("cart-summary");
 let btnClose = document.querySelector(".btn-close")
 var cart = document.getElementById("cart");
 
-function click (btn){
-   btn.addEventListener("click", () => {
-    if (cartSummary.style.display === "block") {
-        cartSummary.style.display = "none";
-    }
-    else {
-        cartSummary.style.display = "block";
-    }
-})
+function click(btn) {
+  if (screen.width <= 991) {
+    btn.addEventListener("click", () =>{
+      window.location = "cart.html"
+    })
+  } else {
+    btn.addEventListener("click", () => {
+      if (cartSummary.style.display === "block") {
+          cartSummary.style.display = "none";
+      }
+      else {
+          cartSummary.style.display = "block";
+      }
+  })
+  }
 }
 click(btnClose);
 click(cart)
@@ -62,7 +68,7 @@ if (getProducts) {
         // update the cart count
     numCount.innerHTML = dataPro.length;
 }
-if (dataPro.length === 0){
+if (addcart == '' || dataPro.length === 0){
   addcart.innerHTML = `
   <div class="empty-cart text-center mt-3" style="width: 320px;">
       <i class="bi bi-cart-x text-secondary" style="font-size: 60px;"></i>
@@ -157,11 +163,11 @@ function updateCartUI(){
         </div>
       </div>` 
     })   
-    // if cart is empty
+    // if the wishlist is empty
     if (dataWislist.length === 0 || wishlistProdcuts == ''){
       wishlistProdcuts.innerHTML = `
       <div class="empty-cart text-center">
-       <img src="./Images/crossed.png" alt="crossed">
+       <img src="./images/crossed.png" alt="crossed">
       <p class="mt-4 fs-3 fw-semibold">Wishlist is empty.</p>
       <p class="fw-medium text-secondary" style="font-size: 14px;">You don't have any products in the wishlist yet.</br>
          You will find a lot of interesting products on our "Shop" page.</p>
@@ -170,6 +176,16 @@ function updateCartUI(){
      `
     } else {
       drawWishlisttProducts(dataWislist);
+    }
+    // if the cart is empty
+    if (addcart == '' || dataPro.length === 0){
+      addcart.innerHTML = `
+      <div class="empty-cart text-center mt-3" style="width: 320px;">
+          <i class="bi bi-cart-x text-secondary" style="font-size: 60px;"></i>
+          <p class="text-secondary" style="font-size: 15px;">You cart is empty</p>
+          <a href="index.html" class="btn btn-primary rounded-pill text-uppercase fw-semibold px-4" style="font-size: 14px;">Return to shop</a>
+      </div>
+     `
     }
 }
 ////////////////////////////////////////////////////////////////////////////
@@ -186,10 +202,10 @@ if (wishlist){
   wishlistCount.innerHTML = dataWislist.length;
 }
 // if cart is empty
-if (dataWislist.length === 0 || wishlistProdcuts == '' || wishlist.length === 0){
+if ( wishlistProdcuts == '' || dataWislist.length === 0){
   wishlistProdcuts.innerHTML = `
   <div class="empty-cart text-center">
-       <img src="./Images/crossed.png" alt="crossed">
+       <img src="./images/crossed.png" alt="crossed">
       <p class="mt-4 fs-3 fw-semibold">Wishlist is empty.</p>
       <p class="fw-medium text-secondary" style="font-size: 14px;">You don't have any products in the wishlist yet.</br>
          You will find a lot of interesting products on our "Shop" page.</p>
@@ -197,7 +213,7 @@ if (dataWislist.length === 0 || wishlistProdcuts == '' || wishlist.length === 0)
   </div>
  `;
 } else {
-  drawWishlisttProducts(dataWislist);
+  // drawWishlisttProducts(dataWislist);
 }
 function drawWishlisttProducts(products){
   let wishlistProdcut = products.map((item) => {
