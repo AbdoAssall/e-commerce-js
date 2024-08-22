@@ -102,6 +102,7 @@
             <a
               class="btn position-relative cart"
               id="cart"
+              href="cart.html"
               role="button"
               data-bs-toggle="dropdow"
               aria-expanded="false"
@@ -115,34 +116,6 @@
         </div>
       </div>
     </nav>
-     <!-- Add to cart -->
-     <div class="container-fluid my-5">
-      <div
-        class="ro justify-content-en position-fixed"
-        style="top: 0px; right: 0; z-index: 9"
-      >
-        <div
-          class="card me-4 z-3"
-          style="width: 340px; display: none; top: 67px; right: 0"
-          id="cart-summary"
-        >
-        <div class="py-2 px-3 border-bottom d-flex justify-content-between align-items-center"
-        style="line-height: 45px">
-             <p class="fw-medium text-uppercase mb-0">Shopping cart</p>
-             <button type="button" class="btn-close" aria-label="Close" style="box-shadow: none;"></button>
-         </div>
-          <div class="d-flex flex-column" style="height: 80vh;">
-            <div class="card-body position-relative overflow-auto">
-              <div id="addcart" class="m-0 position-absolute" style="max-width: 100%;">
-              </div>
-            </div>
-            <div class="d-grid gap-2 col-12 mx-auto px-3 py-3 border-top border-secondary-subtle">
-              <a class="btn btn-primary" id="cart-btn" href="cart.html">Go to cart</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   <!-- Cart Product -->
     <div class="container my-5 pt-3 w-100">
       <div class="card mx-auto card-width" style="width: 900px">
@@ -239,10 +212,10 @@
               </h4>
               <ul>
                 <li><a href="shop.html" class="link-secondary">Shop</a></li>
-                <li><a href="#" id="cart-footer" class="link-secondary">Cart</a></li>
+                <li><button href="#" id="cart-footer" class="btn link-secondary ps-0">Cart</button></li>
                 <li><a href="login.html" class="link-secondary">Login</a></li>
                 <li>
-                  <a href="wishlist.html" class="link-secondary">Wishlist</a>
+                  <button id="wishlist-footer" class="btn link-secondary ps-0">Wishlist</button>
                 </li>
               </ul>
             </div>

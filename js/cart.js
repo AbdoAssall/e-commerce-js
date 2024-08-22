@@ -20,9 +20,21 @@ if (getProducts) {
     document.querySelector("#cart").addEventListener("click", () =>{
         window.location = "cart.html"
     })
+    if (dataPro.length === 0){
+      emptyCart.innerHTML = `
+      <div class="empty-cart text-center my-4 mb-5">
+          <i class="bi bi-cart-x text-secondary" style="font-size: 60px;"></i>
+          <p class="text-secondary" style="font-size: 15px;">You cart is empty</p>
+      </div>
+    `;
+    document.querySelector("#btn-show").innerHTML = "Return to shop"
+    function deleteAll(){
+     window.location = "shop.html"
+    }
+    } 
 } 
 // if cart is empty
-if (cartProdcuts == '' || dataPro.length === 0){
+ else {
   emptyCart.innerHTML = `
   <div class="empty-cart text-center my-4 mb-5">
       <i class="bi bi-cart-x text-secondary" style="font-size: 60px;"></i>
@@ -33,9 +45,10 @@ document.querySelector("#btn-show").innerHTML = "Return to shop"
 function deleteAll(){
  window.location = "shop.html"
 }
-} else {
-  drawCartProducts(dataPro)
 }
+// else {
+//   drawCartProducts(dataPro)
+// }
 // Put products in the cart summary
    function drawCartProducts(products){
       let table = products.map((item) => {
@@ -139,8 +152,8 @@ function deleteAll(){
         document.querySelector("#btn-show").addEventListener("click", ()=> {
           window.location = "shop.html"
         })
-         
-        } else {
+        } 
+        else {
           drawCartProducts(dataPro)
         }
         updateCartSummary(dataPro); 
@@ -185,11 +198,6 @@ if (wishlist){
   dataWishlist = JSON.parse(wishlist)
   wishlistCount.innerHTML = dataWishlist.length
 } 
-// Go to Favorite
-let favBtn = document.querySelector("#fav-btn")
-favBtn.addEventListener("click", () => {
-  window.location = "wishlist.html";
-})
 // Go to Cart
 let cartFooter = document.querySelector("#cart-footer")
 if (localStorage.getItem("email")) {

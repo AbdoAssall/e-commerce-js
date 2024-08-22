@@ -272,6 +272,11 @@ a.nav-link:hover {
 .empty-cart.in-empty{
     display: block !important;
 }
+@media (max-width: 768px){
+    .container-srh {
+        width: 100% !important;
+    }
+}
 /* Home */
 .home {
     background-image: url('../images/bg-home.webp');

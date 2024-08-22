@@ -2,7 +2,6 @@ let user = document.querySelector(".user")
 let userInfo = document.querySelector(".user-info")
 let username = document.querySelector("#username")
 let loginFooter = document.querySelector("#login-footer")
-// let favBtn = document.querySelector("#fav-btn")
 
 if (localStorage.getItem("email")){
     username.innerHTML = "Welcome,</br>" + localStorage.getItem("fristName") + " " + localStorage.getItem("lastName")
@@ -11,9 +10,6 @@ if (localStorage.getItem("email")){
         userInfo.remove()
         window.location = "login.html"
     })
-    // favBtn.addEventListener("click", () =>{
-    //     window.location = "login.html"
-    // })
 }
 
 let logout = document.querySelector("#logout")
@@ -23,3 +19,27 @@ logout.addEventListener("click", () => {
         window.location = "index.html"
     }, 1500)
 })
+
+// Go to Favorite
+let favBtn = document.querySelector("#fav-btn")
+let  wishlistFooter = document.querySelector("#wishlist-footer")
+
+if (localStorage.getItem("email")) {
+    favBtn.addEventListener("click", () => {
+        window.location = "wishlist.html"
+    })
+    wishlistFooter.addEventListener("click", () => {
+        window.location = "wishlist.html"
+    })
+} else {
+    favBtn.addEventListener("click", () => {
+        setTimeout(() => {
+            window.location = "login.html"
+        }, 1000);
+    })
+    wishlistFooter.addEventListener("click", () => {
+        setTimeout(() => {
+            window.location = "login.html"
+        }, 1000);
+    })
+}

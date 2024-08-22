@@ -192,7 +192,7 @@
     <!-- Searsh bar -->
     <div class="search-bar mt-5">
       <div class="container">
-        <div class="row justify-content-between position-relative">
+        <div class="row justify-content-between position-relative g-3">
           <div class="dropdown" data-bs-theme="dark" style="width: 200px">
             <button
               class="btn btn-dark dropdown-toggle d-flex align-items-center"
@@ -223,8 +223,9 @@
               </li>
             </ul>
           </div>
+          <div class="container-srh w-50 position-relative">
             <input
-            class="form-control me-2 rounded border-secondary-subtle w-50 position-relative"
+            class="form-control me-2 rounded border-secondary-subtle position-relative"
             type="text"
             id="search"
             placeholder="Search"
@@ -232,6 +233,7 @@
             onkeyup="searchData(this.value)"
           />
           <span class="search-icon text-secondary"></span>
+          </div>
         </div>
       </div>
     </div>
@@ -276,10 +278,10 @@
               </h4>
               <ul>
                 <li><a href="shop.html" class="link-secondary">Shop</a></li>
-                <li><a href="#" id="cart-footer" class="link-secondary">Cart</a></li>
-                <li><a href="login.html" id="login-footer" class="link-secondary">Login</a></li>
+                <li><button href="#" id="cart-footer" class="btn link-secondary ps-0">Cart</button></li>
+                <li><a href="login.html" class="link-secondary">Login</a></li>
                 <li>
-                  <a href="wishlist.html" class="link-secondary">Wishlist</a>
+                  <button id="wishlist-footer" class="btn link-secondary ps-0">Wishlist</button>
                 </li>
               </ul>
             </div>

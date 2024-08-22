@@ -1,11 +1,12 @@
 // open cart
-var cartSummary = document.getElementById("cart-summary");
+let cartSummary = document.getElementById("cart-summary");
 let btnClose = document.querySelector(".btn-close")
 var cart = document.getElementById("cart");
 
 function click(btn) {
-  if (screen.width <= 991) {
-    btn.addEventListener("click", () =>{
+    if (localStorage.getItem("email")) {
+    if (screen.width <= 991) {
+    cart.addEventListener("click", () =>{
       window.location = "cart.html"
     })
   } else {
@@ -18,11 +19,17 @@ function click(btn) {
       }
   })
   }
+} else {
+  cart.addEventListener("click", () => {
+    setTimeout(() => {
+        window.location = "login.html"
+    }, 1000);
+})
+}
 }
 click(btnClose);
 click(cart)
-
-////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
 // Go to cart
 let cartBtn = document.querySelector("#cart-btn")
 let cartHeader = document.querySelector("#cart-header")
@@ -33,21 +40,6 @@ if (localStorage.getItem("email")) {
     })
 } else {
     cartBtn.addEventListener("click", () => {
-        setTimeout(() => {
-            window.location = "login.html"
-        }, 1000);
-    })
-}
-
-// Go to Favorite
-let favBtn = document.querySelector("#fav-btn")
-
-if (localStorage.getItem("email")) {
-    favBtn.addEventListener("click", () => {
-        window.location = "wishlist.html"
-    })
-} else {
-    favBtn.addEventListener("click", () => {
         setTimeout(() => {
             window.location = "login.html"
         }, 1000);
@@ -67,16 +59,28 @@ if (getProducts) {
     productIncart(dataPro)
         // update the cart count
     numCount.innerHTML = dataPro.length;
+    // if the cart is empty
+    if (dataPro.length === 0) {
+      addcart.innerHTML = `
+      <div class="empty-cart text-center mt-3" style="width: 320px;">
+          <i class="bi bi-cart-x text-secondary" style="font-size: 60px;"></i>
+          <p class="text-secondary" style="font-size: 15px;">You cart is empty</p>
+          <a href="shop.html" class="btn btn-primary rounded-pill text-uppercase fw-semibold px-4" style="font-size: 14px;">Return to shop</a>
+      </div>
+     `
+    }
 }
-if (addcart == '' || dataPro.length === 0){
+// if the cart is empty
+else {
   addcart.innerHTML = `
   <div class="empty-cart text-center mt-3" style="width: 320px;">
       <i class="bi bi-cart-x text-secondary" style="font-size: 60px;"></i>
       <p class="text-secondary" style="font-size: 15px;">You cart is empty</p>
-      <a href="index.html" class="btn btn-primary rounded-pill text-uppercase fw-semibold px-4" style="font-size: 14px;">Return to shop</a>
+      <a href="shop.html" class="btn btn-primary rounded-pill text-uppercase fw-semibold px-4" style="font-size: 14px;">Return to shop</a>
   </div>
  `
 }
+
 // Put product in the cart
 function productIncart(productsId){
   dataPro.map((item) => {
@@ -174,16 +178,18 @@ function updateCartUI(){
       <a href="shop.html" class="btn btn-primary rounded-pill text-uppercase fw-semibold px-4" style="font-size: 14px;">Return to shop</a>
     </div>
      `
-    } else {
+    } 
+    else {
       drawWishlisttProducts(dataWislist);
     }
+    
     // if the cart is empty
     if (addcart == '' || dataPro.length === 0){
       addcart.innerHTML = `
       <div class="empty-cart text-center mt-3" style="width: 320px;">
           <i class="bi bi-cart-x text-secondary" style="font-size: 60px;"></i>
           <p class="text-secondary" style="font-size: 15px;">You cart is empty</p>
-          <a href="index.html" class="btn btn-primary rounded-pill text-uppercase fw-semibold px-4" style="font-size: 14px;">Return to shop</a>
+          <a href="shop.html" class="btn btn-primary rounded-pill text-uppercase fw-semibold px-4" style="font-size: 14px;">Return to shop</a>
       </div>
      `
     }
@@ -200,9 +206,8 @@ if (wishlist){
   drawWishlisttProducts(dataWislist);
 
   wishlistCount.innerHTML = dataWislist.length;
-}
-// if cart is empty
-if ( wishlistProdcuts == '' || dataWislist.length === 0){
+  // if the wishlist is empty 
+if (dataWislist.length === 0) {
   wishlistProdcuts.innerHTML = `
   <div class="empty-cart text-center">
        <img src="./images/crossed.png" alt="crossed">
@@ -212,9 +217,21 @@ if ( wishlistProdcuts == '' || dataWislist.length === 0){
       <a href="shop.html" class="btn btn-primary rounded-pill text-uppercase fw-semibold px-4" style="font-size: 14px;">Return to shop</a>
   </div>
  `;
-} else {
-  // drawWishlisttProducts(dataWislist);
 }
+}
+// if the wishlist is empty 
+else {
+  wishlistProdcuts.innerHTML = `
+  <div class="empty-cart text-center">
+       <img src="./images/crossed.png" alt="crossed">
+      <p class="mt-4 fs-3 fw-semibold">Wishlist is empty.</p>
+      <p class="fw-medium text-secondary" style="font-size: 14px;">You don't have any products in the wishlist yet.</br>
+         You will find a lot of interesting products on our "Shop" page.</p>
+      <a href="shop.html" class="btn btn-primary rounded-pill text-uppercase fw-semibold px-4" style="font-size: 14px;">Return to shop</a>
+  </div>
+ `;
+}
+
 function drawWishlisttProducts(products){
   let wishlistProdcut = products.map((item) => {
     return `
