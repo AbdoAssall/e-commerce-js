@@ -10,9 +10,10 @@ Developed a responsive e-commerce website designed to showcase products and faci
 #### Key Features:
 
 - Product listings with detailed descriptions and pricing.
-- Shopping cart functionality with dynamic updates.
-- Add products to cart or the wishlist.
-- Delete products from cart and the wishlist.
+- Interactive shopping cart with real-time updates and total calculations.
+- Add products to the cart or the wishlist.
+- Delete products from the cart and the wishlist.
+- Implemented client-side validation for forms to enhance user interaction and data integrity.
 - Responsive design for a smooth shopping experience across devices.
 
 ##### Technologies Used: Frontend: HTML, CSS, JavaScript, Bootstrap
